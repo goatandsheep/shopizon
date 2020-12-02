@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Shopizon - Shopify Search</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+</head>
+<body>
+    <main class="section">
+        <div class="container">
+            <h1 class="title">Shopizon</h1>
+        </div>
+        <form id="the-form" class="container" onsubmit="return searchShopify(this)" target="_blank">
+            <div class="field">
+                <div class="field-label is-large">
+                    <label class="label" id="search-input-label-1">Search</label>
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                        <div class="control has-icons-right">
+                            <input class="input is-large is-rounded" type="search" id="search__input-1" placeholder="Books, electronics, gifts, etc." pattern=".{3,}" title="Please enter an item you'd like to search for! Try 'skateboards'">
+                            <span class="icon is-large is-right">
+                                <i class="fas fa-search"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </main>
+    <section class="section">
+        <div class="container">
+            <p class="notification is-primary">
+                Amazon is an incredible resource for making it easy to find products to suit our needs to be shipped to our door.
+                Shopify makes e-commerce easy for small (and big) merchants. Luckily, they can all be indexed from one domain.
+            </p>
+        </div>
+    </section>
+    <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+    <script>
+        function plusCase(input) {
+            return input.replace(/\s/g, '+')
+        }
+        function searchShopify(formEl) {
+            // const formEl = document.getElementById('the-form')
+
+            const searchEl = document.getElementById('search__input-1')
+            let query = searchEl.value || ''
+            if (query) {
+                let src = "https://www.google.com/search?psb=1&tbm=shop&q=site%3Amyshopify.com+" + plusCase(query)
+                window.location.href = src
+            }
+            return false;
+        }
+    </script>
+</body>
+</html>
