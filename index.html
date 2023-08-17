@@ -33,8 +33,10 @@
     <section class="section">
         <div class="container">
             <p class="notification is-primary">
-                Amazon is an incredible resource for making it easy to find products to suit our needs to be shipped to our door.
-                Shopify makes e-commerce easy for small (and big) merchants. Luckily, they can all be indexed from one domain.
+                Amazon is an incredibly convenient platform to find everything in one place. However, it furthers supporting
+                the large Amazon conglomerate. Shopify is another shopping platform to find products but it's made up of small
+                (and big) merchants from around the world. Luckily, they can all be indexed from one place The old search
+                used Google Search but wasn\'t working well. Now we can now use the Shop app search.
             </p>
         </div>
     </section>
@@ -49,7 +51,8 @@
             const searchEl = document.getElementById('search__input-1')
             let query = searchEl.value || ''
             if (query) {
-                let src = "https://www.google.com/search?psb=1&tbm=shop&q=site%3Amyshopify.com+" + plusCase(query)
+                // let src = "https://www.google.com/search?psb=1&tbm=shop&q=site%3Amyshopify.com+" + plusCase(query)
+                let src = "https://shop.app/ai/search?query=" + plusCase(query)
                 window.location.href = src
             }
             return false;
